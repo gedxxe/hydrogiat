@@ -1,0 +1,5 @@
+{
+  "name": "Realtime EC/TDS Monitor",
+  "description": "A sleek, real-time EC/TDS monitoring web application that connects to an MQTT broker via WebSocket to visualize sensor data with a live chart. Built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": []
+}
