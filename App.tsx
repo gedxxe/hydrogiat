@@ -26,16 +26,17 @@ const ConfigError: React.FC<{ missingVars: string[] }> = ({ missingVars }) => (
 );
 
 const App: React.FC = () => {
-  const brokerUrl = process.env.MQTT_URL;
-  const topic = process.env.MQTT_TOPIC;
-  const username = process.env.MQTT_USERNAME;
-  const password = process.env.MQTT_PASSWORD;
+  // Vite exposes only variables prefixed with VITE_ at build-time
+  const brokerUrl = (import.meta as any).env?.VITE_MQTT_URL as string | undefined;
+  const topic = (import.meta as any).env?.VITE_MQTT_TOPIC as string | undefined;
+  const username = (import.meta as any).env?.VITE_MQTT_USERNAME as string | undefined;
+  const password = (import.meta as any).env?.VITE_MQTT_PASSWORD as string | undefined;
 
   const missingVars = [
-    !brokerUrl && 'MQTT_URL',
-    !topic && 'MQTT_TOPIC',
-    !username && 'MQTT_USERNAME',
-    !password && 'MQTT_PASSWORD',
+    !brokerUrl && 'VITE_MQTT_URL',
+    !topic && 'VITE_MQTT_TOPIC',
+    !username && 'VITE_MQTT_USERNAME',
+    !password && 'VITE_MQTT_PASSWORD',
   ].filter(Boolean) as string[];
 
   if (missingVars.length > 0) {
@@ -80,7 +81,7 @@ const App: React.FC = () => {
               <p className="font-semibold">Program KKN UNNES GIAT Angkatan 13</p>
               <p className="text-white/50">created with ❤️ by gedxxe</p>
             </div>
-            <img src="/public/GIAT 13 UNNES.png" alt="GIAT 13 UNNES Logo" className="h-12 w-12 rounded-full bg-white/10 p-1 object-cover" />
+            <img src="/GIAT 13 UNNES.png" alt="GIAT 13 UNNES Logo" className="h-12 w-12 rounded-full bg-white/10 p-1 object-cover" />
           </div>
         </header>
 
