@@ -42,7 +42,8 @@ export const useMqtt = (options: MqttOptions) => {
     const connectMqtt = async () => {
       addLog('Initializing MQTT client...');
       try {
-        const mod: any = await import('mqtt/dist/mqtt.min.js');
+        // Use the package entry so Vite resolves it correctly
+        const mod: any = await import('mqtt');
         const connect = mod?.connect ?? mod?.default?.connect;
         if (typeof connect !== 'function') throw new Error('mqtt.connect not found (use browser bundle)');
 
