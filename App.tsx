@@ -81,7 +81,7 @@ const App: React.FC = () => {
               <p className="font-semibold">Program KKN UNNES GIAT Angkatan 13</p>
               <p className="text-white/50">created with ❤️ by gedxxe</p>
             </div>
-            <img src="/GIAT 13 UNNES.png" alt="GIAT 13 UNNES Logo" className="h-12 w-12 rounded-full bg-white/10 p-1 object-cover" />
+            <img src="https://i.imgur.com/w1NF6hJ.png" alt="GIAT 13 UNNES Logo" className="h-12 w-12 rounded-full bg-white/10 p-1 object-cover" />
           </div>
         </header>
 
